@@ -1,0 +1,92 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+float division(float a, float b){
+    return a / b;
+}
+
+float multiplication(float a, float b){
+    return a * b;
+}
+
+float addition(float a, float b){
+    return a + b;
+}
+
+float subtraction(float a, float b){
+    return a - b;
+}
+
+
+void menu(){
+    const int menuWidth = 35;
+
+    
+    cout<< "===============Menu============="<<endl;
+    cout << "* " << left << setw(menuWidth - 3) << "1.         Addition" << "*" << endl;
+    cout << "* " << left << setw(menuWidth - 3) << "2.        Subtraction" << "*" << endl;
+    cout << "* " << left << setw(menuWidth - 3) << "3.       Multiplication" << "*" << endl;
+    cout << "* " << left << setw(menuWidth - 3) << "4.         Division" << "*" << endl;
+    cout<< "=================================="<<endl;
+
+
+
+
+}
+
+
+int main () {
+    float a,b,x;
+    bool repeat = true;
+    bool stop = false;
+
+    
+
+    while(repeat){
+        menu();
+        
+
+        cout<<"Choose an Operation? ";
+            cin>>x;
+        if (x>4 || x<1){
+            cout << "Invalid Input.\n\n";
+            continue;
+
+        }
+        
+        cout<<"First Number? ";
+            cin>>a;
+        cout<<"Second Number? ";
+            cin>>b;
+
+        if (x==1){
+            cout<<"Sum: "<<addition(a,b);
+        }
+
+        if (x==2){
+            cout<<"Difference: "<<subtraction(a,b);
+        }
+
+        if (x==3){
+            cout<<"Product: "<<multiplication(a,b);
+        }
+
+        if (x==4){
+            cout<<"Qoutient: "<<division(a,b);
+        }
+
+        
+
+    
+
+        
+        cout<<endl<<"\nContinue?(1.Yes/0.No) ";
+            cin>>repeat;
+        
+    
+    }
+}
+
+// Finished product: Calculator in C++ w/ error handling and design formatting. 
